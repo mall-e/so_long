@@ -6,7 +6,7 @@
 /*   By: muyazici <muyazici@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/15 16:18:10 by muyazici          #+#    #+#             */
-/*   Updated: 2022/08/15 16:47:37 by muyazici         ###   ########.fr       */
+/*   Updated: 2022/08/16 16:30:46 by muyazici         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ int	line_length(void)
 
 	fdmap = open("map.ber", O_RDONLY);
 	line = get_next_line(fdmap);
+	close(fdmap);
 	return (ft_strlen(line));
 }
 
@@ -38,6 +39,7 @@ int	row_length(void)
 			i++;
 		}
 	}
+	close(fdmap);
 	return (i);
 }
 
@@ -55,7 +57,7 @@ void	put_xpm(void *mlx, void *mlx_win, t_img *img, int i)
 
 	a = 1;
 	fdmap = open("map.ber", O_RDONLY);
-	img->wall = mlx_xpm_file_to_image(mlx, "1/1.xpm", img-> w, img ->h);
+	img->wall = mlx_xpm_file_to_image(mlx, "1/1.xpm", img->w, img ->h);
 	img->exit = mlx_xpm_file_to_image(mlx, "1/tree.xpm", img-> w, img ->h);
 	img->player = mlx_xpm_file_to_image(mlx, "1/bn.xpm", img-> w, img ->h);
 	img->co = mlx_xpm_file_to_image(mlx, "1/down_2__.xpm", img-> w, img ->h);

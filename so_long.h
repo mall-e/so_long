@@ -22,12 +22,17 @@ typedef struct	s_data{
 
 
 typedef struct s_img{
+	void	*mlx;
+	void	*mlx_win;
 	void	*wall;
 	void	*co;
 	void	*exit;
 	void	*player;
 	int		*w;
 	int		*h;
+	int		x_kord;
+	int		y_kord;
+	char	**map;
 }		t_img;
 
 
