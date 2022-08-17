@@ -11,13 +11,9 @@
 
 typedef struct	s_data{
 	void	*img;
-	void	*exit;
-	char	*addr;
 	int		*width;
 	int		*height;
-	int		bits_per_pixel;
 	int		line_length;
-	int		endian;
 }				t_data;
 
 
@@ -28,17 +24,23 @@ typedef struct s_img{
 	void	*co;
 	void	*exit;
 	void	*player;
+	void	*floor;
 	int		*w;
 	int		*h;
 	int		x_kord;
 	int		y_kord;
 	char	**map;
+	char	**map_input;
 }		t_img;
 
 
 
 int		line_length();
 int		row_length();
-void	put_xpm(void *mlx, void *mlx_win, t_img *img, int i);
+void	put_xpm(t_img *img);
+int		push_button(int keycode, t_img *so_long);
+void	player(t_img *so_long);
+void	addimage(t_img *so_long);
+char	**mapdonder(t_img *so_long);
 
 #endif
