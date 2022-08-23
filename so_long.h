@@ -25,15 +25,20 @@ typedef struct s_img{
 	void	*exit;
 	void	*player;
 	void	*floor;
+	int		coin;
 	int		*w;
 	int		*h;
 	int		x_kord;
 	int		y_kord;
 	char	**map;
 	char	**map_input;
+	int		g_coin;
+	int		g_move;
+	int		index;
 }		t_img;
 
 
+void	img_draw(t_img *so_long, void *image, int x, int y);
 
 int		line_length();
 int		row_length();
@@ -42,5 +47,16 @@ int		push_button(int keycode, t_img *so_long);
 void	player(t_img *so_long);
 void	addimage(t_img *so_long);
 char	**mapdonder(t_img *so_long);
+void	ft_makestr(int nbr);
+void	counter_coin(t_img *so_long);
+void	isRectangular(t_img *so_long);
+void	isMapTrue(t_img *so_long);
+void	allfunc(int argc, t_img *so_long);
+void	isWallTrue(t_img *so_long);
+void	isArgTrue(int argc, t_img *so_long);
+void	isDuplicate(t_img *so_long);
+void	ft_makestr(int nbr);
+int		addanimation(t_img *so_long ,int index);
+int 	hookfunc(t_img *so_long);
 
 #endif
